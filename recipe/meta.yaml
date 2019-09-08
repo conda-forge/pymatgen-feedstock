@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2019.8.23" %}
+{% set version = "2019.9.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2ae3b1698b2b6daf38cdb33af7c2bb7ece47c83f0bc49b4bfb8385e13c67984c
+  sha256: e1b0c9cf0484d2717da2a5dd667b4f6ac3fc8d1955f31c8fb642310a8a44d66d
 
 build:
   skip: true  # [py<35]
@@ -47,6 +47,7 @@ requirements:
     - pybtex
     - apscheduler >=2.1.0
     - netcdf4
+    - tqdm
     - ase >=3.3
     - vtk >=6.0.0
     - dataclasses >=0.6  # [py<37]
