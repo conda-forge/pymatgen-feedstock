@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<35]
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - pmg = pymatgen.cli.pmg:main
@@ -40,7 +40,7 @@ requirements:
     - tabulate
     - spglib >=1.9.9.44
     - networkx >=2.2
-    - matplotlib >=1.5
+    - matplotlib-base >=1.5
     - palettable >=3.1.1
     - sympy
     - pandas
