@@ -32,6 +32,7 @@ requirements:
     - numpy =1.14
   run:
     - python
+    - pip
     - requests
     - ruamel.yaml >=0.15.6
     - scipy >=1.0.1
