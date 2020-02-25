@@ -55,6 +55,7 @@ requirements:
 
 test:
   commands:
+    - pip check
     - pmg --help
     - gaussian_analyzer --help
   imports:
