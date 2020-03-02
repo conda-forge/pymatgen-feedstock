@@ -44,7 +44,7 @@ requirements:
     - matplotlib-base >=1.5
     - palettable >=3.1.1
     - sympy
-    - pandas
+    - pandas <1.0
     - pybtex
     - apscheduler >=2.1.0
     - netcdf4
