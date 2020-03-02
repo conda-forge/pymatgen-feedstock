@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2020.1.28" %}
+{% set version = "2020.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 886eb915f3efd60ab0295202cdbe0802f1632187b60517d466917211e02d5d7d
+  sha256: 28a500da40d6882c0ca63f011a9c72bead3444a4c80a6bde012b0c34215c917a
 
 build:
   skip: true  # [py<35]
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_input_generation = pymatgen.cli.feff_input_generation:main
@@ -44,7 +44,7 @@ requirements:
     - matplotlib-base >=1.5
     - palettable >=3.1.1
     - sympy
-    - pandas
+    - pandas <1.0
     - pybtex
     - apscheduler >=2.1.0
     - netcdf4
@@ -101,7 +101,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst
-  summary: 'Python Materials Genomics is an analysis code for materials science.'
+  summary: Python Materials Genomics is an analysis code for materials science.
   description: |
     Python Materials Genomics is a robust materials analysis code that defines
     core object representations for structures and molecules with support for many
