@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2020.3.13" %}
+{% set version = "2020.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4f2cec3c58b14e76243cbc0a65a98b55ae1e115364518a9c0e74d52cca6cce36
+  sha256: f8833c8cfb29f3d93f92e61068a5ad57a6a553b0bc588c9243e3e315660669bd
 
 build:
   skip: true  # [py<35]
@@ -52,6 +52,7 @@ requirements:
     - ase >=3.3
     - vtk >=6.0.0
     - dataclasses >=0.6  # [py<37]
+    - plotly >=4.5
     - {{ pin_compatible("numpy") }}
 
 test:
