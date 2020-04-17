@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<35]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
@@ -44,7 +44,7 @@ requirements:
     - matplotlib-base >=1.5
     - palettable >=3.1.1
     - sympy
-    - pandas <1.0
+    - pandas
     - pybtex
     - apscheduler >=2.1.0
     - netcdf4
