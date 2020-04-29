@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2020.4.2" %}
+{% set version = "2020.4.29" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f8833c8cfb29f3d93f92e61068a5ad57a6a553b0bc588c9243e3e315660669bd
+  sha256: cf9c89f2c742acf524f3a778cd269164abf582e87ab5f297cd83802fe00c309d
 
 build:
   skip: true  # [py<35]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
@@ -37,7 +37,6 @@ requirements:
     - ruamel.yaml >=0.15.6
     - scipy >=1.0.1
     - monty >=1.0.6
-    - pydispatcher >=2.0.5
     - tabulate
     - spglib >=1.9.9.44
     - networkx >=2.2
@@ -53,6 +52,7 @@ requirements:
     - vtk >=6.0.0
     - dataclasses >=0.6  # [py<37]
     - plotly >=4.5
+    - beautifulsoup4
     - {{ pin_compatible("numpy") }}
 
 test:
