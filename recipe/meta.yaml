@@ -35,7 +35,7 @@ requirements:
     - pip
     - requests
     - ruamel.yaml >=0.15.6
-    - scipy >=1.0.1
+    - scipy >=1.4.1
     - monty >=1.0.6
     - tabulate
     - spglib >=1.9.9.44
