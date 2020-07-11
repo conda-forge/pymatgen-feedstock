@@ -5,7 +5,7 @@ Home: http://www.pymatgen.org
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python Materials Genomics is an analysis code for materials science.
 
