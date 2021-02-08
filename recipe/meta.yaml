@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2020.12.31" %}
+{% set version = "2021.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5002490facd47c55d2dae42c35712e061c1f5d881180485c0543a899589856d6
+  sha256: 454112e4f2fbf409f825fc4762322b3bc22babbee6c971949b28f85bcc3f9a82
 
 build:
   skip: true  # [py<35]
@@ -29,14 +29,15 @@ requirements:
     - pip
     - setuptools >=18.0
     - cython
-    - numpy >=1.14
+    - numpy >=1.18.0
   run:
     - python
     - pip
+    - {{ pin_compatible("numpy") }}
     - requests
     - ruamel.yaml >=0.15.6
-    - scipy >=1.4.1
-    - monty >=1.0.6
+    - monty >=3.0.2
+    - scipy >=1.5.0
     - tabulate
     - spglib >=1.9.9.44
     - networkx >=2.2
@@ -44,17 +45,15 @@ requirements:
     - palettable >=3.1.1
     - sympy
     - pandas
+    - plotly >=4.5.0
+    - uncertainties >=3.1.4
     - pybtex
-    - apscheduler >=2.1.0
-    - netcdf4
     - tqdm
     - ase >=3.3
     - vtk >=6.0.0
+    - netcdf4
     - dataclasses >=0.6  # [py<37]
-    - plotly >=4.5
-    - beautifulsoup4
-    - uncertainties
-    - {{ pin_compatible("numpy") }}
+    - typing-extensions >=3.7.4.3  # [py<38]
 
 test:
   commands:
