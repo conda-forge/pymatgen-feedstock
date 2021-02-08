@@ -52,7 +52,7 @@ requirements:
     - vtk >=6.0.0
     - netcdf4
     - dataclasses >=0.6  # [py<37]
-    - ptyping-extensions>=3.7.4.3  # [py<38]
+    - ptyping-extensions >=3.7.4.3  # [py<38]
 
 test:
   commands:
