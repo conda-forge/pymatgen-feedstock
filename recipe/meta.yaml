@@ -37,6 +37,7 @@ requirements:
   run:
     - python
     - pip
+    - cython
     - {{ pin_compatible("numpy") }}
     - requests
     - ruamel.yaml >=0.15.6
