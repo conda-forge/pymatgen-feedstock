@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2022.5.18" %}
+{% set version = "2022.5.18.1" %}
 
 package:
   name: {{ name|lower }}
