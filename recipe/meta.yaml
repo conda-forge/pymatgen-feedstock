@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 6c0eee3e370b49b31cc508ae26a4b21af5a57f370d4330b0cfe50d2656ef9730
+  sha256: 917c12a517306f237107d3f5771d372f44b546ab21a8d9612ed92f687383061e
   patches:
     - pyproject.patch
 
