@@ -77,7 +77,6 @@ test:
     - pymatgen.analysis.chemenv.coordination_environments.strategy_files
     - pymatgen.analysis.chemenv.utils
     - pymatgen.analysis.cost
-    - pymatgen.analysis.defects
     - pymatgen.analysis.diffraction
     - pymatgen.analysis.elasticity
     - pymatgen.analysis.hhi
