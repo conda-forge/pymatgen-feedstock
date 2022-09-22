@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2022.9.8" %}
+{% set version = "2022.9.21" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: aedd18d2ecebe9d12946528d2d4f5632cc3f39936e8d53dd5647c833568e29e5
+  sha256: 18c2d999cafe1c2a7cdd4094d87f2fb37dcc117784e28ab720f74772f5baac80
   patches:
     - pyproject.patch
 
@@ -56,6 +56,7 @@ requirements:
     - uncertainties >=3.1.4
     - pybtex
     - tqdm
+    - mp-api
     - ase >=3.3
     - vtk >=6.0.0
     - netcdf4
