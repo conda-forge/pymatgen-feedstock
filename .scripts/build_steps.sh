@@ -75,9 +75,15 @@ if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
     # Drop into an interactive shell
     /bin/bash
 else
-    conda mambabuild "${RECIPE_ROOT}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
+    conda mambabuild --no-test "${RECIPE_ROOT}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
         --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml"
+    ls "${FEEDSTOCK_ROOT}/build_artifacts/${HOST_PLATFORM}"/*.conda
+    for f in "${FEEDSTOCK_ROOT}/build_artifacts/${HOST_PLATFORM}"/*.conda ; do
+        conda mambabuild --test "${f}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
+            --suppress-variables ${EXTRA_CB_OPTIONS:-} \
+            --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml"
+    done
     ( startgroup "Validating outputs" ) 2> /dev/null
 
     validate_recipe_outputs "${FEEDSTOCK_NAME}"
