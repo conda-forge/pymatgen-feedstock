@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b96efcee4ef353d5b1adf33aded04f6bf6008e46c01695569a33895dd2d4e75f
+  sha256: fc48a859a6e7298581d4e889803d9fdb4b40692eeb19383fe68dc55bb9aafc22
 
 build:
   skip: true  # [py<38]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
