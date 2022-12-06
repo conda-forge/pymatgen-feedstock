@@ -69,12 +69,7 @@ jobs:
         if EXIST LICENSE.txt (
           copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
         )
-        conda.exe mambabuild --no-test "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
-        set "xx=$(CONDA_BLD_PATH)"
-        set "xx=%xx:\\=\%"
-        dir %xx%win-64\*.conda || exit 1
-        for %%f in (%xx%win-64\*.conda) do ^
-        conda.exe mambabuild --test %%f -m .ci_support\%CONFIG%.yaml --suppress-variables || exit 1
+        conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1

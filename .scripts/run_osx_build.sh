@@ -75,17 +75,9 @@ if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
     # Drop into an interactive shell
     /bin/bash
 else
-    conda mambabuild --no-test ./recipe -m ./.ci_support/${CONFIG}.yaml \
+    conda mambabuild ./recipe -m ./.ci_support/${CONFIG}.yaml \
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
         --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
-    if [[ "${HOST_PLATFORM}" == "${BUILD_PLATFORM}" ]]; then
-        ls "${MINIFORGE_HOME}/conda-bld/${HOST_PLATFORM}"/*.conda
-        for f in "${MINIFORGE_HOME}/conda-bld/${HOST_PLATFORM}"/*.conda ; do
-            conda mambabuild --test "${f}" -m ./.ci_support/${CONFIG}.yaml \
-                --suppress-variables ${EXTRA_CB_OPTIONS:-} \
-                --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
-        done
-    fi
     ( startgroup "Validating outputs" ) 2> /dev/null
 
     validate_recipe_outputs "${FEEDSTOCK_NAME}"
