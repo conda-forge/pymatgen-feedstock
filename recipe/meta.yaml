@@ -103,7 +103,7 @@ about:
   home: http://www.pymatgen.org
   license: MIT
   license_family: MIT
-  license_file: LICENSE.rst
+  license_file: LICENSE
   summary: Python Materials Genomics is an analysis code for materials science.
   description: |
     Python Materials Genomics is a robust materials analysis code that defines
