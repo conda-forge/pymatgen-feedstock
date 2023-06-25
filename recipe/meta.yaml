@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2023.05.31" %}
+{% set version = "2023.06.23" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b4a319682fa197d8067ee29ef02e31c80591829cd2963214b8ef519aff171f3b
+  sha256: 39d4a563eb730e72f533b3a3e7bb9e4e1dc9c40e81f14d4633276f763bedf601
 
 build:
   skip: true  # [py<38]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
