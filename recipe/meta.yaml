@@ -51,6 +51,7 @@ requirements:
     - uncertainties >=3.1.4
     - pybtex
     - tqdm
+    - frozendict
     - mp-api >=0.27.3
 
 test:
