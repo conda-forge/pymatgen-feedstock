@@ -53,6 +53,7 @@ requirements:
     - tqdm
     - frozendict
     - mp-api >=0.27.3
+    - joblib
 
 test:
   imports:
