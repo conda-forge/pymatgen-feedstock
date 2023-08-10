@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2023.7.20" %}
+{% set version = "2023.8.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c5bfe79ad1f2ed95cc028e66a670f07485c36feea1660e77e9d49f6e366ab33f
+  sha256: 15d439dbf77769d98cac012313251418e1d250cb1980a81bc4b3edda9f55107d
 
 build:
   skip: true  # [py<38]
