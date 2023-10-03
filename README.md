@@ -3,21 +3,13 @@ About pymatgen-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymatgen-feedstock/blob/main/LICENSE.txt)
 
-Home: http://www.pymatgen.org
+Home: https://pymatgen.org
 
 Package license: MIT
 
-Summary: Python Materials Genomics is an analysis code for materials science.
+Summary: Python Materials Genomics is a robust materials analysis code that defines core object representations for structures and molecules with support for many electronic structure codes. It is currently the core analysis code powering the Materials Project (https://materialsproject.org).
 
-Development: https://github.com/materialsproject/pymatgen
-
-Documentation: http://www.pymatgen.org
-
-Python Materials Genomics is a robust materials analysis code that defines
-core object representations for structures and molecules with support for many
-electronic structure codes. It is currently the core analysis code powering the
-Materials Project (https://www.materialsproject.org).
-
+Documentation: https://pythonhosted.org/pymatgen/
 
 Current build status
 ====================
