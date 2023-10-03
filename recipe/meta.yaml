@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/materialsproject/pymatgen/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 9ec71ff18def7f1b18d2369e4ebab86ebbc300784eae146730d85405e1ffdbe7
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
+  sha256: f76ff146ce8143b523383b3aa692e98f338205264708c2cae771431f2506edc4
 
 build:
   skip: true  # [py<39]
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_plot_cross_section = pymatgen.cli.feff_plot_cross_section:main
     - feff_plot_dos = pymatgen.cli.feff_plot_dos:main
     - get_environment = pymatgen.cli.get_environment:main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   build:
@@ -25,34 +25,33 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
   host:
     - python
-    - pip
     - cython >=0.29.23
-    - setuptools >=18.0
+    - oldest-supported-numpy
+    - setuptools >=65.0.0
     - numpy
+    - pip
   run:
     - python
-    - {{ pin_compatible('numpy') }}
-    - requests
-    - ruamel.yaml >=0.17.0
-    - monty >=3.0.2
-    - scipy >=1.5.0
-    - tabulate
-    - spglib >=1.9.9.44
-    - networkx >=2.2
     - matplotlib-base >=1.5
+    - monty >=3.0.2
+    - networkx >=2.2
     - palettable >=3.1.1
-    - sympy
     - pandas
     - plotly >=4.5.0
-    - uncertainties >=3.1.4
     - pybtex
+    - requests
+    - ruamel.yaml >=0.17.0
+    - scipy >=1.5.0
+    - spglib >=2.0.2
+    - sympy
+    - tabulate
     - tqdm
-    - frozendict
-    - mp-api >=0.27.3
+    - uncertainties >=3.1.4
     - joblib
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
@@ -100,18 +99,11 @@ test:
     - pip
 
 about:
-  home: http://www.pymatgen.org
+  home: https://pymatgen.org
+  summary: Python Materials Genomics is a robust materials analysis code that defines core object representations for structures and molecules with support for many electronic structure codes. It is currently the core analysis code powering the Materials Project (https://materialsproject.org).
+  doc_url: https://pythonhosted.org/pymatgen/
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: Python Materials Genomics is an analysis code for materials science.
-  description: |
-    Python Materials Genomics is a robust materials analysis code that defines
-    core object representations for structures and molecules with support for many
-    electronic structure codes. It is currently the core analysis code powering the
-    Materials Project (https://www.materialsproject.org).
-  doc_url: http://www.pymatgen.org
-  dev_url: https://github.com/materialsproject/pymatgen
 
 extra:
   recipe-maintainers:
