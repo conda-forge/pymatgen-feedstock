@@ -29,7 +29,6 @@ requirements:
   host:
     - python
     - cython >=0.29.23
-    - oldest-supported-numpy
     - setuptools >=65.0.0
     - numpy
     - pip
