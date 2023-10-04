@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2023.10.3" %}
+{% set version = "2023.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: d4ea04e28607f26eb21a36a8486c929265a86dd9fab97bc43f2c49c81c0e2199
+  sha256: 113c9af4f69d5281864f8603ee74e738ac4726e94e61094da8eaa3bb638f119e
 
 build:
   skip: true  # [py<39]
@@ -66,6 +66,7 @@ test:
     - pymatgen.analysis.diffraction
     - pymatgen.analysis.elasticity
     - pymatgen.analysis.hhi
+    - pymatgen.analysis.pourbaix_diagram
     - pymatgen.apps
     - pymatgen.apps.battery
     - pymatgen.apps.borg
@@ -78,6 +79,7 @@ test:
     - pymatgen.io.abinit
     - pymatgen.io.feff
     - pymatgen.io.lammps
+    - pymatgen.io.vasp
     - pymatgen.ext.matproj
     - pymatgen.optimization
     - pymatgen.analysis.phase_diagram
@@ -88,6 +90,7 @@ test:
     - pymatgen.vis
   commands:
     - pip check
+    - pmg --help
     - feff_plot_cross_section --help
     - feff_plot_dos --help
     - get_environment --help
