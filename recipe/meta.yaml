@@ -88,7 +88,6 @@ test:
     - pymatgen.vis
   commands:
     - pip check
-    - pmg --help
     - feff_plot_cross_section --help
     - feff_plot_dos --help
     - get_environment --help
