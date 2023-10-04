@@ -17,7 +17,7 @@ build:
     - feff_plot_dos = pymatgen.cli.feff_plot_dos:main
     - get_environment = pymatgen.cli.get_environment:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -66,6 +66,7 @@ test:
     - pymatgen.analysis.diffraction
     - pymatgen.analysis.elasticity
     - pymatgen.analysis.hhi
+    - pymatgen.analysis.pourbaix_diagram
     - pymatgen.apps
     - pymatgen.apps.battery
     - pymatgen.apps.borg
@@ -78,6 +79,7 @@ test:
     - pymatgen.io.abinit
     - pymatgen.io.feff
     - pymatgen.io.lammps
+    - pymatgen.io.vasp
     - pymatgen.ext.matproj
     - pymatgen.optimization
     - pymatgen.analysis.phase_diagram
@@ -88,6 +90,7 @@ test:
     - pymatgen.vis
   commands:
     - pip check
+    - pmg --help
     - feff_plot_cross_section --help
     - feff_plot_dos --help
     - get_environment --help
