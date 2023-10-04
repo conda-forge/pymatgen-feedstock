@@ -66,7 +66,6 @@ test:
     - pymatgen.analysis.diffraction
     - pymatgen.analysis.elasticity
     - pymatgen.analysis.hhi
-    - pymatgen.analysis.pourbaix_diagram
     - pymatgen.apps
     - pymatgen.apps.battery
     - pymatgen.apps.borg
