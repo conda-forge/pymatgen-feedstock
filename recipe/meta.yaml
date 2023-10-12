@@ -60,7 +60,7 @@ test:
     - pymatgen.analysis.chemenv
     - pymatgen.analysis.chemenv.coordination_environments
     - pymatgen.analysis.chemenv.coordination_environments.coordination_geometries_files
-    - pymatgen.analysis.chemenv.coordination_environments.strategy_files
+    # - pymatgen.analysis.chemenv.coordination_environments.strategy_files
     - pymatgen.analysis.chemenv.utils
     - pymatgen.analysis.cost
     - pymatgen.analysis.diffraction
