@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2023.10.11" %}
+{% set version = "2023.11.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: 2b6c0012ffd942f6aef89a63c7e20297cf5c4e0533d5f7604110d4485b5176b6
+  sha256: 318360e641a4d8f931dcb3c3b9317d1c066742ad3dcf9f143bac615f6dafd02e
 
 build:
   skip: true  # [py<39]
