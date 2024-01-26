@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2023.12.18" %}
+{% set version = "2024.1.26" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: 56c0041fe5431ac1b8f8c0c17d06091c4d61082c3a99924f3940d73ebb6656eb
+  sha256: 73c020fd4375a9c5372892e531e84c7a9c4deb2eb21cd4063e0e8ef1ea727f77
 
 build:
   skip: true  # [py<39]
@@ -17,7 +17,7 @@ build:
     - feff_plot_dos = pymatgen.cli.feff_plot_dos:main
     - get_environment = pymatgen.cli.get_environment:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
