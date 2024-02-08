@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2024.1.27" %}
+{% set version = "2024.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: 58312100ab88f861847886052275025daaecc95733b53808456642c2a2c431ce
+  sha256: 1ed429c6c5eff9f0156a921ca9f8513623c37665d23a4bc882dd11cd88ff1bec
 
 build:
   skip: true  # [py<39]
@@ -35,7 +35,7 @@ requirements:
   run:
     - python
     - matplotlib-base >=1.5
-    - monty >=3.0.2
+    - monty >=2024.2.2
     - networkx >=2.2
     - palettable >=3.1.1
     - pandas
