@@ -47,6 +47,7 @@ requirements:
     - spglib >=2.0.2
     - sympy
     - tabulate
+    - typing_extensions
     - tqdm
     - uncertainties >=3.1.4
     - joblib
