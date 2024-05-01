@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2024.4.13" %}
+{% set version = "2024.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: 98b32455121fc6d80f29b49e945448ab709c5520b88a76b90eb707155c6cec02
+  sha256: dc5c1e342e7013e70cc5ef3d857fd67147c09c44af42e25c4fddaa4d89979c49
 
 build:
   skip: true  # [py<39]
@@ -26,6 +26,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython >=0.29.23
