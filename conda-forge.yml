@@ -11,4 +11,5 @@ github:
   tooling_branch_name: main
 provider:
   win: azure
+  linux_aarch64: azure
 test: native_and_emulated
