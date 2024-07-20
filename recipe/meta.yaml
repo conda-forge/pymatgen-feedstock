@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2024.6.10" %}
+{% set version = "2024.7.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: 7e5fa62851ecff7e41d6d1832ab24309978b74bd7278f9d57d40a26d26a5520f
+  sha256: 914c171c0121da50e691da351ce157f906d1f5efc9c2d38f5e2b68839d50b8a6
 
 build:
   skip: true  # [py<39]
@@ -17,7 +17,7 @@ build:
     - feff_plot_dos = pymatgen.cli.feff_plot_dos:main
     - get_environment = pymatgen.cli.get_environment:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -45,7 +45,7 @@ requirements:
     - requests >=2.32
     - ruamel.yaml >=0.17.0
     - scipy >=1.13.0
-    - spglib >=2.0.2
+    - spglib >=2.5.0
     - sympy >=1.2
     - tabulate >=0.9
     - typing_extensions
