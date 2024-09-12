@@ -10,7 +10,7 @@ source:
   sha256: 10e066b3b6c2c98ab1c0ce366f352093d412a86938a9b934203a98bcd2763118
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<310]
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_plot_cross_section = pymatgen.cli.feff_plot_cross_section:main
