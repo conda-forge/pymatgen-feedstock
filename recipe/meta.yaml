@@ -1,16 +1,16 @@
 {% set name = "pymatgen" %}
-{% set version = "2024.8.9" %}
+{% set version = "2024.9.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymatgen-{{ version }}.tar.gz
-  sha256: e0ca35d41d5964d063519cd6b8db54c411ec8469382df172fa177ec2a6b3a70a
+  url: https://github.com/materialsproject/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 10e066b3b6c2c98ab1c0ce366f352093d412a86938a9b934203a98bcd2763118
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<310]
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_plot_cross_section = pymatgen.cli.feff_plot_cross_section:main
