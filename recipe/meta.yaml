@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2024.10.3" %}
+{% set version = "2024.10.22" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: a1535a6f0a7e81abf5c3cde752bd2d6be5623e78f6ea7971011f263a3cb11aff
+  sha256: af7630d87cc4cbd08eacd17ffd9248e8e4e43d9ac0999370c8416023a1ecaf93
 
 build:
   skip: true  # [py<310]
@@ -17,7 +17,7 @@ build:
     - feff_plot_dos = pymatgen.cli.feff_plot_dos:main
     - get_environment = pymatgen.cli.get_environment:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -38,7 +38,7 @@ requirements:
     - python
     - matplotlib-base >=3.8
     - monty >=2024.7.29
-    - networkx >=2.2
+    - networkx >=3
     - palettable >=3.3.3
     - pandas >=2
     - plotly >=4.5.0
