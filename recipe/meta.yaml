@@ -11,6 +11,7 @@ source:
 
 build:
   skip: true  # [py<310]
+  skip: true  # [py>313]
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_plot_cross_section = pymatgen.cli.feff_plot_cross_section:main
@@ -28,14 +29,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python <3.13,>=3.10
+    - python
     - cython >=0.29.23
     - setuptools >=65.0.0
     - numpy
     - pip
   run:
     - numpy
-    - python <3.13,>=3.10
+    - python
     - matplotlib-base >=3.8
     - monty >=2024.7.29
     - networkx >=3
