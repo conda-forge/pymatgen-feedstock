@@ -28,14 +28,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python
+    - python <3.13,>=3.10
     - cython >=0.29.23
     - setuptools >=65.0.0
     - numpy
     - pip
   run:
     - numpy
-    - python
+    - python <3.13,>=3.10
     - matplotlib-base >=3.8
     - monty >=2024.7.29
     - networkx >=3
