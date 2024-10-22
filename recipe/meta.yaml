@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<310]
-  skip: true  # [py>313]
+  skip: true  # [py>312]
   entry_points:
     - pmg = pymatgen.cli.pmg:main
     - feff_plot_cross_section = pymatgen.cli.feff_plot_cross_section:main
