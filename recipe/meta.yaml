@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2025.4.20" %}
+{% set version = "2025.4.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: c3d7fb9db8a01231a5f57bb0ffdd956133b8637cc45f7dc2cbbd1c73e98d252f
+  sha256: 21a7b9f2380e87deb2c7e413fb1b7216d4b3d82fb9eccf405dcae11e0f08a044
 
 build:
   skip: true  # [py<310]
@@ -47,7 +47,7 @@ requirements:
     - pybtex >=0.24.0
     - requests >=2.32
     - ruamel.yaml >=0.17.0
-    - scipy >=1.13.0
+    - scipy >=1.14.1
     - spglib >=2.5
     - sympy >=1.3
     - tabulate >=0.9
