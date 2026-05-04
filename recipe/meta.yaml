@@ -1,5 +1,5 @@
 {% set name = "pymatgen" %}
-{% set version = "2026.3.23" %}
+{% set version = "2026.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 83c8bc5f92530eeec6c068a56b9530948e9944df5ed54c77625c6ba8142a22d1
+  sha256: 38b88397a9ccd84e40c02e8a5c5109205b93e883bc254950579facd55d50d27c
 
 build:
   entry_points:
@@ -34,7 +34,7 @@ requirements:
     - numpy
     - pip
   run:
-    - pymatgen-core >=2026.3.9
+    - pymatgen-core >=2026.4.16
     - orjson >=3.10,<4
     - lxml >=5.3.1
     - bibtexparser >=1.4.0
