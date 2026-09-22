@@ -13,7 +13,7 @@ source:
   sha256: 38b88397a9ccd84e40c02e8a5c5109205b93e883bc254950579facd55d50d27c
 
 build:
-  number: 1
+  number: 2
   skip: match(python, "<=3.10")
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -26,13 +26,11 @@ build:
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: cython
-    - if: build_platform != target_platform
-      then: numpy
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython
+        - numpy
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
   host:
