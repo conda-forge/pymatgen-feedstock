@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pymatgen
-  version: 2026.9.24
+  version: "2026.10.24"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/materialsproject/${{ name }}/archive/v${{ version }}.tar.gz
-  sha256: ea230adc431ba43cb184a1140fcbc4be7684fc0407754e0b45f04d9707e459b4
+  sha256: 4c18e548b827ae18fd5b847bef0a53e0e34bf5065ef274a0c850e769d2425b62
 
 build:
-  number: 2
+  number: 0
   script:
     env:
       SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
